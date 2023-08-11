@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>tessract.js example</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta http-Equiv="Cache-Control" Content="no-cache" />
+        <meta http-Equiv="Pragma" Content="no-cache" />
+        <meta http-Equiv="Expires" Content="0" />
+        <!-- v4 -->
+        <script src='tesseract.min.js'></script>
+</head>
+
+<body>
+        <div class="H2">Виртуальный исследовательский практикум по ядерной физике</div>
+        <script>
+                Tesseract.recognize(
+                        //'https://tesseract.projectnaptha.com/img/eng_bw.png',
+                        'example_4.png',
+                        'rus',
+                        { logger: m => console.log(m) }
+                ).then(
+                        (
+                                { data: { text } }
+                        ) => {
+                                console.log(text);
+                        }
+                )
+        </script>
+</body>
+
+</html>
